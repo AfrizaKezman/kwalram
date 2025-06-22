@@ -29,6 +29,24 @@ export default function Home() {
     },
   ];
 
+  const testimonials = [
+    {
+      name: "John Tan",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      text: "PT Kwalram's commitment to quality and timely delivery has made them our preferred textile supplier for over a decade.",
+    },
+    {
+      name: "Maria Gomez",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+      text: "Their sustainable practices and innovative solutions set a new standard in the textile industry.",
+    },
+    {
+      name: "Akira Sato",
+      avatar: "https://randomuser.me/api/portraits/men/30.jpg",
+      text: "Professional, reliable, and always ahead in technology. Highly recommended for global brands.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-100 to-white font-sans">
       {/* Geometric Background */}
