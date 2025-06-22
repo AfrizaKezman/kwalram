@@ -2,6 +2,7 @@
 import {
   GlobeAltIcon, BuildingOffice2Icon, ShieldCheckIcon, UsersIcon, ChartBarIcon, BoltIcon, CheckBadgeIcon, BriefcaseIcon, BanknotesIcon, AcademicCapIcon
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 export default function Home() {
   const features = [
@@ -122,13 +123,13 @@ export default function Home() {
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 animate-fade-in-up">Client Testimonials</h2>
           <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-100">
-            Hear from our global partners about their experience with PT Kwalram's products and services.
+            Hear from our global partners about their experience with PT Kwalram&apos;s products and services.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, idx) => (
             <div key={idx} className="bg-white rounded-xl p-7 shadow-md border border-blue-100 flex flex-col items-center animate-fade-in-up" style={{ animationDelay: `${idx * 150}ms` }}>
-              <img src={t.avatar} alt={t.name} className="w-16 h-16 rounded-full border-2 border-blue-200 mb-3 shadow-sm" />
+              <Image src={t.avatar} alt={t.name} width={64} height={64} className="w-16 h-16 rounded-full border-2 border-blue-200 mb-3 shadow-sm" />
               <p className="text-gray-700 text-base mb-2 text-center">“{t.text}”</p>
               <span className="font-semibold text-blue-700">{t.name}</span>
             </div>
