@@ -1,8 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/app/contexts/AuthContext';
-import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
-import { db } from '@/app/lib/firebase';
 
 // Status badge with blue/gray/corporate theme
 const StatusBadge = ({ status }) => {
@@ -40,8 +38,8 @@ export default function OrdersPage() {
         }
         if (data.success && data.transactions) {
           const processedOrders = data.transactions.map(order => ({
-            id: order.id,
-            orderNumber: order.orderNumber || `ORD-${order.id.slice(-6)}`,
+            id: order.id || order._id,
+            orderNumber: order.orderNumber || `ORD-${(order.id || order._id).toString().slice(-6)}`,
             orderDate: order.orderDate || order.createdAt,
             orderStatus: order.orderStatus || 'pending',
             items: (order.items || []).map(item => ({
